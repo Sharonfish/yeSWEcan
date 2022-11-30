@@ -1,0 +1,97 @@
+.slider {
+    width: 100%;
+    min-height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 3rem;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    transition: all 1s ease;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 4rem 1rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    opacity: 0;
+    animation: slideRight 2.5s ease 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.contentWithAnimation {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    opacity: 1;
+    animation: slideLeft 2s ease 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideRight {
+    0% {
+        visibility: visible;
+        opacity: 0;
+        left: -50rem;
+    }
+    100% {
+        visibility: visible;
+        opacity: 1;
+        left: 5rem;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        visibility: visible;
+        opacity: 0.6;
+        left: 5rem;
+    }
+    100% {
+        visibility: visible;
+        opacity: 0;
+        left: -30rem;
+    }
+}
+
+.slideImgContainer {
+    height: 100%;
+    position: absolute;
+}
+
+.slideImgWithAnimation {
+    opacity: 1;
+    position: absolute;
+    animation: disappear 2.5s ease 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.slideImg {
+    opacity: 1;
+    position: absolute;
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
